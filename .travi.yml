@@ -14,7 +14,7 @@ after_success:
     - docker build -t lcruzero/multi-server ./server
     - docker built -t lcruzero/multi-worker ./worker 
 
-    # log into travis cli 
+    # log into travis cli auth 
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin"  
 
     # push images to docker hub
