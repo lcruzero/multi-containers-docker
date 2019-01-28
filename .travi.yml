@@ -3,7 +3,7 @@ services:
     - docker
 
 before_install:
-    - docker build -t lcruzero/react-test -f ./client/Dockerfile-dev ./client
+    - docker build -t lcruzero/multi-containers-docker -f ./client/Dockerfile-dev ./client
 
 script:
     - docker run lcruzero/react-test npm test -- --coverage
