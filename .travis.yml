@@ -5,10 +5,10 @@ services:
 
 before_install:
     - docker build -t lcruzero/react-test -f ./client/Dockerfile.dev ./client
-
+    #run fail safe test
 script:
     - docker run lcruzero/react-test npm test -- --coverage
-
+      #build images with tags
 after_success:
     - docker build -t lcruzero/multi-client ./client
     - docker build -t lcruzero/multi-nginx ./nginx
