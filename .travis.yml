@@ -14,6 +14,7 @@ after_success:
     - docker build -t lcruzero/multi-nginx ./nginx
     - docker build -t lcruzero/multi-server ./server
     - docker built -t lcruzero/multi-worker ./worker 
+      # log into docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin  
     - docker push lcruzero/multi-client
     - docker push lcruzero/multi-nginx
