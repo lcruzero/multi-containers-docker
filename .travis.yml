@@ -2,7 +2,7 @@ sudo: required
 
 services:
     - docker
-
+      #add test
 before_install:
     - docker build -t lcruzero/react-test -f ./client/Dockerfile.dev ./client
     #run fail safe test
