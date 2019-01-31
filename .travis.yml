@@ -21,3 +21,17 @@ after_success:
     - docker push lcruzero/multi-nginx
     - docker push lcruzero/multi-server
     - docker push lcruzero/multi-worker 
+
+deploy:
+    provider: elasticbeanstalk
+    region: us-east-2
+    app: multi-docker
+    env: MultiDocker-env
+    bucket_name: elasticbeanstalk-us-east-2-985567306891
+    bucket_path: docket-multi
+
+    on:
+        branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key:
+        secure: $AWS_SECRET_KEY

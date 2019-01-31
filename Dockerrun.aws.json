@@ -1,0 +1,42 @@
+{ 
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "lcruzero/multi-client",
+            "hostname": "client",
+            "essential": false
+
+        },
+
+        {
+            "name": "server",
+            "image": "lcruzero/multi-server",
+            "hostname": "api",
+            "essential": false
+    
+        },
+
+        {
+            "name": "worker",
+            "image": "lcruzero/multi-worker",
+            "hostname": "worker",
+            "essential": false
+        },
+
+        {
+            "name": "nginx",
+            "image": "lcruzero/multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "postMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["client", "server"]
+
+        }
+    ]
+}
