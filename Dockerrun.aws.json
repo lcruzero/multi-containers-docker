@@ -5,7 +5,8 @@
             "name": "client",
             "image": "lcruzero/multi-client",
             "hostname": "client",
-            "essential": false
+            "essential": false,
+            "memory": 128
 
         },
 
@@ -13,7 +14,8 @@
             "name": "server",
             "image": "lcruzero/multi-server",
             "hostname": "api",
-            "essential": false
+            "essential": false,
+            "memory": 128
     
         },
 
@@ -21,7 +23,8 @@
             "name": "worker",
             "image": "lcruzero/multi-worker",
             "hostname": "worker",
-            "essential": false
+            "essential": false,
+            "memory": 128
         },
 
         {
@@ -36,6 +39,7 @@
                 }
             ],
             "links": ["client", "server"]
+            "memory": 128
 
         }
     ]
