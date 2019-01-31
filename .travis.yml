@@ -21,7 +21,7 @@ after_success:
     - docker push lcruzero/multi-nginx
     - docker push lcruzero/multi-server
     - docker push lcruzero/multi-worker 
-
+      #elasticbeanstalk params
 deploy:
     provider: elasticbeanstalk
     region: us-east-2
